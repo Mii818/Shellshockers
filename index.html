@@ -28,6 +28,7 @@
   
       <div id="urlInputContainer">
           <input type="text" id="urlInput" placeholder="Enter URL here">
+          <input type="password" id="passwordInput" placeholder="Enter Password">
           <button onclick="assignURL()">Submit</button>
       </div>
   
@@ -36,9 +37,14 @@
       <script>
           function assignURL() {
               var myURL = document.getElementById("urlInput").value;
-              if(myURL == "mynameisnotalaxender"){
-                document.getElementById("embedFrame").setAttribute("src", myURL);
-                document.getElementById("urlInputContainer").style.display = "none";
+              var password = document.getElementById("passwordInput").value;
+              
+              // Replace 'mynameisnotalaxender' with your actual password
+              if(password === "mynameisnotalaxender" && myURL) {
+                  document.getElementById("embedFrame").setAttribute("src", myURL);
+                  document.getElementById("urlInputContainer").style.display = "none";
+              } else {
+                  alert("Incorrect password or URL is empty!");
               }
           }
       </script>
