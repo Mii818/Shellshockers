@@ -36,15 +36,11 @@
   
       <script>
           function assignURL() {
-              var myURL = document.getElementById("urlInput").value;
               var password = document.getElementById("passwordInput").value;
               
               // Replace 'mynameisnotalaxender' with your actual password
-              if(password === "mynameisnotalaxender" && myURL) {
-                  document.getElementById("embedFrame").setAttribute("src", myURL);
+              if(password === "mynameisnotalaxender") {
                   document.getElementById("urlInputContainer").style.display = "none";
-              } else {
-                  alert("Incorrect password or URL is empty!");
               }
           }
       </script>
