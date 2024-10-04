@@ -9,6 +9,7 @@
               margin: 0;
               padding: 0;
               height: 100%;
+              background-color: #666699;
           }
           embed{
               position: fixed;
@@ -17,29 +18,30 @@
               border: none;
               display: none;
           }
-          #urlInputContainer{
+          #iputContainer{
               position: absolute;
               top: 20px;
               left: 20px;
               z-index: 1000;
+              background-color: #6666CC;
           }
       </style>
   </head>
   <body>
   
-      <div id="urlInputContainer">
+      <div id="inputContainer">
           <input type="password" id="passwordInput" placeholder="Enter Password">
-          <button onclick="assignURL()">Submit</button>
+          <button onclick="enterPassword()">Submit</button>
       </div>
   
       <embed id="embedFrame" src="https://shellshock.io/" type="text/html">
   
       <script>
-          function assignURL() {
+          function enterPassword() {
               var password = document.getElementById("passwordInput").value;
               
               if(password === "is this the correct password?"){
-                  document.getElementById("urlInputContainer").style.display = "none";
+                  document.getElementById("inputContainer").style.display = "none";
                   document.getElementById("embedFrame").style.display = "block";
               }
           }
