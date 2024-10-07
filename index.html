@@ -34,7 +34,7 @@
   <body>
   
       <div id="inputContainer">
-          <input type="password" id="passwordBox" placeholder="Enter Password">
+          <input type="password" id="passwordBox" onkeypress="handleKeyPress(event)" placeholder="Enter Password">
           <button onclick="enterPassword()">Submit</button>
       </div>
   
@@ -47,6 +47,11 @@
               if(password === "is this the correct password?"){
                   document.getElementById("inputContainer").style.display = "none";
                   document.getElementById("embedFrame").style.display = "block";
+              }
+          }
+          function handleKeyPress(event) {
+              if (event.key === 'Enter') {
+                  enterPassword();
               }
           }
       </script>
